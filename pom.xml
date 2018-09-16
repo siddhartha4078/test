@@ -5,6 +5,11 @@
 	<groupId>com.study</groupId>
 	<artifactId>com.TestNG</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	
+	
+		<properties>
+		<suiteXmlFile>C:\\Users\\Mr Panda\\eclipse-workspace\\com.TestNG\\testng.xml</suiteXmlFile>
+	</properties>
 	<dependencies>
 		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
 		<dependency>
@@ -20,4 +25,27 @@
 		</dependency>
 
 	</dependencies>
+		<build>
+		<!-- Plugin -->
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.0</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.20</version>
+
+				<configuration>
+					<suiteXmlFiles>
+						<suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
+					</suiteXmlFiles>
+				</configuration>
+
+			</plugin>
+		</plugins>
+		<!-- Plugin -->
+	</build>
 </project>
